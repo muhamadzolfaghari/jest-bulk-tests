@@ -7,9 +7,9 @@ This approach allows developers to use seed data to determine how functions can 
 Cases are passed as an array argument to the "each" method. As a result, all tests run individually.
 
 
-```ts
+```js
 // A sample method to check if the result of adding numbers is odd
-const isSumResultOdd = (a: number, b: number) => (a + b) % 2 !== 0;
+const isSumResultOdd = (a, b) => (a + b) % 2 !== 0;
 
 // The result expected to determine the isSumResult by passing value in the bulk tests
 const bulkTests = test.each([
@@ -25,5 +25,4 @@ bulkTests("Adding %i and %i should be odd is %s", (a, b, expected) => {
 
 // Error expression: Adding 2 and 2 should be odd is true
 // The result for [2, 2, true] isn't expected to true
-
 ```
